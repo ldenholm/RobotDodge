@@ -8,11 +8,14 @@ public class Program
         Window w = new Window("Robot Dodge", 600, 600);
         Player player = new Player(w);
 
-        while (!w.CloseRequested)
+        while (!w.CloseRequested && !player.Quit)
         {
             SplashKit.ProcessEvents();
             w.Clear(Color.White);
             player.Draw();
+            w.Refresh(60);
+            player.HandleInput();
+            player.StayOnWindow(w);
             w.Refresh(60);
         }
         //SplashKit.Delay(5000);

@@ -9,3 +9,14 @@
 /Users/lochlandenholm/Code/SIT771/RobotDodge/obj/Debug/netcoreapp2.0/RobotDodge.AssemblyInfo.cs
 /Users/lochlandenholm/Code/SIT771/RobotDodge/obj/Debug/netcoreapp2.0/RobotDodge.dll
 /Users/lochlandenholm/Code/SIT771/RobotDodge/obj/Debug/netcoreapp2.0/RobotDodge.pdb
+C:\Users\Loki\Desktop\Graduate Certificate of Information Technology\SIT771\RobotDodge\bin\Debug\netcoreapp2.0\RobotDodge.deps.json
+C:\Users\Loki\Desktop\Graduate Certificate of Information Technology\SIT771\RobotDodge\bin\Debug\netcoreapp2.0\RobotDodge.runtimeconfig.json
+C:\Users\Loki\Desktop\Graduate Certificate of Information Technology\SIT771\RobotDodge\bin\Debug\netcoreapp2.0\RobotDodge.runtimeconfig.dev.json
+C:\Users\Loki\Desktop\Graduate Certificate of Information Technology\SIT771\RobotDodge\bin\Debug\netcoreapp2.0\RobotDodge.dll
+C:\Users\Loki\Desktop\Graduate Certificate of Information Technology\SIT771\RobotDodge\bin\Debug\netcoreapp2.0\RobotDodge.pdb
+C:\Users\Loki\Desktop\Graduate Certificate of Information Technology\SIT771\RobotDodge\obj\Debug\netcoreapp2.0\RobotDodge.csprojAssemblyReference.cache
+C:\Users\Loki\Desktop\Graduate Certificate of Information Technology\SIT771\RobotDodge\obj\Debug\netcoreapp2.0\RobotDodge.csproj.CoreCompileInputs.cache
+C:\Users\Loki\Desktop\Graduate Certificate of Information Technology\SIT771\RobotDodge\obj\Debug\netcoreapp2.0\RobotDodge.AssemblyInfoInputs.cache
+C:\Users\Loki\Desktop\Graduate Certificate of Information Technology\SIT771\RobotDodge\obj\Debug\netcoreapp2.0\RobotDodge.AssemblyInfo.cs
+C:\Users\Loki\Desktop\Graduate Certificate of Information Technology\SIT771\RobotDodge\obj\Debug\netcoreapp2.0\RobotDodge.dll
+C:\Users\Loki\Desktop\Graduate Certificate of Information Technology\SIT771\RobotDodge\obj\Debug\netcoreapp2.0\RobotDodge.pdb

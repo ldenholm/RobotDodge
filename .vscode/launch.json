@@ -30,7 +30,7 @@
             "windows": {
                 "console": "externalTerminal",
                 "env": {
-                    "PATH": "${env:PATH};${env:HOME}\\.splashkit\\lib"
+                    "PATH": "${env:PATH};C:/msys64/home/Loki/.splashkit/lib/win64"
                 }
             }
         }
