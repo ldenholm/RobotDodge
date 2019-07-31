@@ -1,3 +1,4 @@
+using System;
 using SplashKitSDK;
 
 public class Player
@@ -76,9 +77,24 @@ public class Player
         }
 
         //creating local variable to store maximum right-side value of X.
-        if (X > ( - GAP))
+        if (X + Width > limit.Width - GAP)
         {
-            X = (Splashkit.CurrentWindow.Width() - GAP);
+            X = (limit.Width - GAP) - Width;
+        }
+
+        if ((X + Width) > limit.Width - GAP)
+        {
+            X = (limit.Width - GAP) - Width;
+        }
+
+        if (Y < GAP)
+        {
+            Y = GAP;
+        }
+
+        if ((Y + Height) > limit.Height - GAP)
+        {
+            Y = (limit.Height - GAP) - Height;
         }
     }
 
