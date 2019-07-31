@@ -11,11 +11,10 @@ public class Program
         while (!w.CloseRequested && !player.Quit)
         {
             SplashKit.ProcessEvents();
-            w.Clear(Color.White);
-            player.Draw();
-            w.Refresh(60);
             player.HandleInput();
             player.StayOnWindow(w);
+            w.Clear(Color.White);
+            player.Draw();
             w.Refresh(60);
         }
         //SplashKit.Delay(5000);

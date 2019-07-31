@@ -6,7 +6,7 @@ public class Player
     public double X { get; set; }
     public double Y { get; set; }
     public bool Quit { get; private set; }
-    
+
     public int Width
     {
         get
@@ -75,11 +75,21 @@ public class Player
             X = GAP;
         }
 
-        //creating local variable to store maximum right-side value of X.
-        if (X > ( - GAP))
+        if ((X + Width) > limit.Width - GAP)
         {
-            X = (Splashkit.CurrentWindow.Width() - GAP);
+            X = (limit.Width - GAP) - Width;
         }
+
+        if (Y < GAP)
+        {
+            Y = GAP;
+        }
+
+        if ((Y + Height) > limit.Height - GAP)
+        {
+            Y = (limit.Height - GAP) - Height;
+        }
+
     }
 
 }
