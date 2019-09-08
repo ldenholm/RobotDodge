@@ -92,4 +92,8 @@ public class Player
 
     }
 
+    public bool CollidedWith(Robot r)
+    {
+        return _PlayerBitmap.CircleCollision(X, Y, r.CollisionCircle);
+    }
 }
