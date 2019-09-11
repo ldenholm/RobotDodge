@@ -5,9 +5,13 @@ public class Program
 {
     public static void Main()
     {
+        // Initializing game window
         Window w = new Window("Robot Dodge", 600, 600);
-        //Player player = new Player(w);
+        
         RobotDodge r = new RobotDodge(w);
+
+        // Initializing timer
+        r.scoreTimer.Start();
 
         while ((!w.CloseRequested && !r.Quit) && r.Alive > 0)
         {
@@ -16,6 +20,5 @@ public class Program
             r.Update();
             r.Draw();
         }
-        //SplashKit.Delay(5000);
     }
 }

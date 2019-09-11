@@ -8,6 +8,12 @@ public class RobotDodge
     private Window _GameWindow;
     private List<Robot> _Robots = new List<Robot>();
     
+    // Loading Roboto font. 
+    private Font roboto = SplashKit.LoadFont("Roboto", "Roboto-Black.ttf");
+
+    // Creating timer for scoring
+    public Timer scoreTimer = new Timer("Score Timer");
+    
     public int Alive
     {
         get
@@ -53,6 +59,9 @@ public class RobotDodge
 
         _Player.Draw();
         _Player.DrawLives();
+
+        SplashKit.DrawTextOnWindow(_GameWindow, "Score: " + Convert.ToString(scoreTimer.Ticks / 1000), Color.Black, roboto, 18, 500, 10);
+
         _GameWindow.Refresh(60);
     }
 
