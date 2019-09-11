@@ -1,5 +1,5 @@
-using System;
 using SplashKitSDK;
+using System;
 
 public class Program
 {
@@ -9,7 +9,7 @@ public class Program
         //Player player = new Player(w);
         RobotDodge r = new RobotDodge(w);
 
-        while ((!w.CloseRequested && !r.Quit) && r.Alive)
+        while ((!w.CloseRequested && !r.Quit) && r.Alive > 0)
         {
             SplashKit.ProcessEvents();
             r.HandleInput();

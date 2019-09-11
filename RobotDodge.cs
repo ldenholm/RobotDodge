@@ -1,12 +1,20 @@
-using System;
 using SplashKitSDK;
+using System;
 using System.Collections.Generic;
+
 public class RobotDodge
 {
     private Player _Player;
     private Window _GameWindow;
     private List<Robot> _Robots = new List<Robot>();
-    private List<Bitmap> _Lives = new List<Bitmap>();
+    
+    public int Alive
+    {
+        get
+        {
+            return _Player.lives;
+        }
+    }
 
     public bool Quit
     {
@@ -16,17 +24,13 @@ public class RobotDodge
         }
     }
 
-    public bool Alive
-    {
-        get { return _Lives.Count > 0; }
-    }
     public RobotDodge(Window w)
     {
         _GameWindow = w;
         _Player = new Player(_GameWindow);
-        // Calling the lives method which populates the _Lives list with bitmaps.
-        createLives();
-        DrawLives();
+        
+        
+        
     }
 
     public void HandleInput()
@@ -35,15 +39,7 @@ public class RobotDodge
         _Player.StayOnWindow(_GameWindow);
     }
 
-    public void DrawLives()
-    {
-                // drawing the lives.
-        SplashKit.DrawBitmap(_Lives[0], 10, 10);
-        SplashKit.DrawBitmap(_Lives[1], 50, 10);
-        SplashKit.DrawBitmap(_Lives[2], 90, 10);
-        SplashKit.DrawBitmap(_Lives[3], 130, 10);
-        SplashKit.DrawBitmap(_Lives[4], 170, 10);
-    }
+    
 
     public void Draw()
     {
@@ -56,6 +52,7 @@ public class RobotDodge
         }
 
         _Player.Draw();
+        _Player.DrawLives();
         _GameWindow.Refresh(60);
     }
 
@@ -106,16 +103,9 @@ public class RobotDodge
                 // add robot to removeRobotList
                 removeTheseRobots.Add(r);                
             }
-
-            // R E M O V I N G  L I V E S
-            // if the player collides with a robot
-            // remove one life from the list.
-            for (var i = 0; i < _Lives.Count; i++)
+            if (_Player.CollidedWith(r))
             {
-                if (_Player.CollidedWith(r))
-                {
-                    _Lives.RemoveAt(i);
-                }
+                _Player.lives--;
             }
         }
 
@@ -125,23 +115,5 @@ public class RobotDodge
             // telling _Robots to remove the current robot
             _Robots.Remove(r);
         }
-    }
-
-
-    // This method creates the live bitmaps and adds them to the
-    // _Lives field.
-    public void createLives()
-    {
-        Bitmap hp1 = new Bitmap("hp1", "heart.png");
-        Bitmap hp2 = new Bitmap("hp2", "heart.png");
-        Bitmap hp3 = new Bitmap("hp3", "heart.png");
-        Bitmap hp4 = new Bitmap("hp4", "heart.png");
-        Bitmap hp5 = new Bitmap("hp5", "heart.png");
-
-        _Lives.Add(hp1);
-        _Lives.Add(hp2);
-        _Lives.Add(hp3);
-        _Lives.Add(hp4);
-        _Lives.Add(hp5);
     }
 }

@@ -1,8 +1,11 @@
 using SplashKitSDK;
+using System;
 
 public class Player
 {
     private Bitmap _PlayerBitmap = new Bitmap("Player", "Player.png");
+    private Bitmap _LifeBitmap = new Bitmap("Life", "heart.png");
+    public int lives { get; set; }
     public double X { get; set; }
     public double Y { get; set; }
     public bool Quit { get; private set; }
@@ -28,12 +31,26 @@ public class Player
         X = (w.Width - Width) / 2;
         //Y = ((w.Height - _PlayerBitmap.Height) / 2);
         Y = (w.Height - Height) / 2;
+        
+        // initialize life to 5
+        lives = 5;
+
         Quit = false;
     }
 
     public void Draw()
     {
         SplashKit.DrawBitmap(_PlayerBitmap, X, Y);
+    }
+
+    // Function to draw lives
+    public void DrawLives()
+    {
+        for (int i = 0; i < lives; i++ )
+        {
+             // drawing the lives.
+            SplashKit.DrawBitmap(_LifeBitmap, (i * 50), 10);
+        }
     }
 
     public void HandleInput()
