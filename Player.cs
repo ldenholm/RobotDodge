@@ -5,6 +5,7 @@ public class Player
 {
     private Bitmap _PlayerBitmap = new Bitmap("Player", "Player.png");
     private Bitmap _LifeBitmap = new Bitmap("Life", "heart.png");
+    //private Bullet _bullet = new Bullet();
     public int lives { get; set; }
     public double X { get; set; }
     public double Y { get; set; }
@@ -41,6 +42,7 @@ public class Player
     public void Draw()
     {
         SplashKit.DrawBitmap(_PlayerBitmap, X, Y);
+        //_bullet.Draw();
     }
 
     // Function to draw lives
@@ -52,6 +54,11 @@ public class Player
             SplashKit.DrawBitmap(_LifeBitmap, (i * 50), 10);
         }
     }
+
+    /*public void Shoot()
+    {
+        Matrix2D anchorMatrix = SplashKit
+    }*/
 
     public void HandleInput()
     {
