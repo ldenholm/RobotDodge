@@ -1,14 +1,13 @@
 using SplashKitSDK;
 using System;
-
 public class Player
 {
     private Bitmap _PlayerBitmap = new Bitmap("Player", "Player.png");
     private Bitmap _LifeBitmap = new Bitmap("Life", "heart.png");
-    //private Bullet _bullet = new Bullet();
     public int lives { get; set; }
     public double X { get; set; }
     public double Y { get; set; }
+    public char BulletDirection { get; set; }
     public bool Quit { get; private set; }
 
     public int Width
@@ -55,18 +54,22 @@ public class Player
         }
     }
 
-    /*public void Shoot()
-    {
-        Matrix2D anchorMatrix = SplashKit
-    }*/
-
     public void HandleInput()
     {
         const int SPEED = 5;
 
+
         if (SplashKit.KeyDown(KeyCode.UpKey))
         {
             Y -= SPEED;
+            // SET DIRECTION FOR BULLET
+            BulletDirection = 'U';
+
+            if (SplashKit.KeyDown(KeyCode.SpaceKey))
+            {
+                // shoot a bullet.
+                Console.WriteLine("shooting a bullet.");
+            }
         }
 
         if (SplashKit.KeyDown(KeyCode.DownKey))

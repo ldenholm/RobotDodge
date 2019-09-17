@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Loki\\Desktop\\Graduate Certificate of Information Technology\\SIT771\\RobotDodge\\RobotDodge.csproj": {}
+    "C:\\Users\\Loki\\Desktop\\newDodge\\RobotDodgeWithChanges\\RobotDodge.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Loki\\Desktop\\Graduate Certificate of Information Technology\\SIT771\\RobotDodge\\RobotDodge.csproj": {
+    "C:\\Users\\Loki\\Desktop\\newDodge\\RobotDodgeWithChanges\\RobotDodge.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Loki\\Desktop\\Graduate Certificate of Information Technology\\SIT771\\RobotDodge\\RobotDodge.csproj",
+        "projectUniqueName": "C:\\Users\\Loki\\Desktop\\newDodge\\RobotDodgeWithChanges\\RobotDodge.csproj",
         "projectName": "RobotDodge",
-        "projectPath": "C:\\Users\\Loki\\Desktop\\Graduate Certificate of Information Technology\\SIT771\\RobotDodge\\RobotDodge.csproj",
+        "projectPath": "C:\\Users\\Loki\\Desktop\\newDodge\\RobotDodgeWithChanges\\RobotDodge.csproj",
         "packagesPath": "C:\\Users\\Loki\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Loki\\Desktop\\Graduate Certificate of Information Technology\\SIT771\\RobotDodge\\obj\\",
+        "outputPath": "C:\\Users\\Loki\\Desktop\\newDodge\\RobotDodgeWithChanges\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

@@ -13,7 +13,9 @@ public class RobotDodge
 
     // Creating timer for scoring
     public Timer scoreTimer = new Timer("Score Timer");
-    
+
+    // create bullet object.
+    public Bullet b = new Bullet();
     public int Alive
     {
         get
@@ -94,8 +96,23 @@ public class RobotDodge
 
     public Robot RandomRobot(Window w, Player p)
     {
-        Robot r = new Robot(w, p);
-        return r;
+        float whichBot = SplashKit.Rnd();
+        if (whichBot > 0.7)
+        {
+            Roundy r = new Roundy(w, p);
+            return r;
+        }
+        else if (whichBot < 0.4)
+        {
+            Boxy b = new Boxy(w, p);
+            return b;
+        }
+        else
+        {
+            Flippy f = new Flippy(w, p);
+            return f;
+        }    
+        
     }
 
     private void CheckCollisions()

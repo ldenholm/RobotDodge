@@ -1,6 +1,6 @@
 using SplashKitSDK;
 using System;
-public class Robot
+public abstract class Robot
 {
     public double X { get; set; }
     public double Y { get; set; }
@@ -86,13 +86,28 @@ public class Robot
         MainColor = Color.RandomRGB(200);
     }
 
+    public abstract void Draw();
+
     public void Update()
     {
         X += Velocity.X;
         Y += Velocity.Y;
     }
 
-    public void Draw()
+    public bool isOffScreen(Window screen)
+    {
+        // returns true or false for result of any of the following statements. 
+        return (X < -Width) || (X > screen.Width) || (Y < -Height) || (Y > screen.Height);
+    }
+}
+
+public class Boxy : Robot
+{
+    public Boxy(Window w, Player p) : base (w, p)
+    {
+        
+    }
+    public override void Draw()
     {
         double leftX, rightX;
         double eyeY, mouthY;
@@ -108,10 +123,61 @@ public class Robot
         SplashKit.FillRectangle(MainColor, leftX, mouthY, 25, 10);
         SplashKit.FillRectangle(MainColor, leftX + 2, mouthY + 2, 21, 6);
     }
+}
 
-    public bool isOffScreen(Window screen)
+public class Roundy : Robot
+{
+    public Roundy(Window w, Player p) : base (w, p)
     {
-        // returns true or false for result of any of the following statements. 
-        return (X < -Width) || (X > screen.Width) || (Y < -Height) || (Y > screen.Height);
+        
     }
+
+    public override void Draw()
+        {
+            double leftX, midX, rightX;
+            double midY, eyeY, mouthY;
+
+            leftX = X + 17;
+            midX = X + 25;
+            rightX = X + 33;
+
+            midY = Y + 25;
+            eyeY = Y + 20;
+            mouthY = Y + 35;
+
+            SplashKit.FillCircle(Color.White, midX, midY, 25);
+            SplashKit.DrawCircle(Color.Gray, midX, midY, 25);
+            SplashKit.FillCircle(MainColor, leftX, eyeY, 5);
+            SplashKit.FillCircle(Color.White, rightX, eyeY, 5);
+            SplashKit.FillEllipse(Color.Gray, X, eyeY, 50, 30);
+            SplashKit.DrawLine(Color.Black, X, mouthY, X + 50, Y + 35);
+        }
+}
+
+public class Flippy : Robot
+{
+    public Flippy(Window w, Player p) : base (w, p)
+    {
+        
+    }
+    public override void Draw()
+        {
+            double leftX, midX, rightX;
+            double midY, eyeY, mouthY;
+
+            leftX = X + 17;
+            midX = X + 25;
+            rightX = X + 33;
+
+            midY = Y + 25;
+            eyeY = Y + 20;
+            mouthY = Y + 35;
+
+            SplashKit.FillCircle(Color.White, midX, midY, 15);
+            SplashKit.DrawCircle(Color.Gray, midX, midY, 5);
+            SplashKit.FillCircle(MainColor, leftX, eyeY, 5);
+            SplashKit.FillCircle(Color.White, rightX, eyeY, 5);
+            SplashKit.FillEllipse(Color.Gray, X, eyeY, 10, 5);
+            SplashKit.DrawLine(Color.Black, X, mouthY, X + 15, Y + 15);
+        }
 }
